@@ -11,6 +11,15 @@ qt_add_executable(library-management-system
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    loginscreen.h loginscreen.cpp loginscreen.ui
+    menuscreen.h menuscreen.cpp menuscreen.ui
+    userrepository.h
+    userentity.h
+    userrepository.cpp
+    usermapper.h
+    state.h
+
+
 
 )
 

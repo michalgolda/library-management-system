@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "loginscreen.h"
+#include "state.h"
+#include "menuscreen.h"
+#include <QSqlDatabase>
+#include "userrepository.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +24,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QSqlDatabase db;
+    UserRepository userRepository;
+    State appState;
+    LoginScreen *loginScreen = nullptr;
+    MenuScreen *menuScreen = nullptr;
 };
 #endif // MAINWINDOW_H
