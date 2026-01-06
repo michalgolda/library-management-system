@@ -9,7 +9,8 @@
 #include "controller.h"
 #include "booksindexscreen.h"
 #include "readercardsscreen.h"
-
+#include "readercardrepository.h"
+#include "bookrepository.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -31,6 +32,8 @@ private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
     UserRepository userRepository;
+    BookRepository bookRepository;
+    ReaderCardRepository readerCardRepository;
     State appState;
     Controller *appController = nullptr;
     ReaderCardsScreen *readerCardsScreen = nullptr;

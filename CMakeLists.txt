@@ -25,6 +25,15 @@ qt_add_executable(library-management-system
     screenid.h
     booksindexscreen.h booksindexscreen.cpp booksindexscreen.ui
     readercardsscreen.h readercardsscreen.cpp readercardsscreen.ui
+    bookrepository.h
+    bookentity.h
+    entity.h
+    bookmapper.h
+    bookrepository.cpp
+    readercardentity.h
+    readercardmapper.h
+    readercardrepository.h
+    readercardrepository.cpp
 
 
 

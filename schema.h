@@ -12,6 +12,23 @@ inline void initSchema(QSqlDatabase db)
                 username TEXT NOT NULL UNIQUE,
                 password TEXT NOT NULL
             )
+        )",
+        R"(
+            CREATE TABLE IF NOT EXISTS books (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                title TEXT NOT NULL UNIQUE,
+                description TEXT NOT NULL,
+                pageCount INTEGER NOT NULL
+            )
+        )",
+        R"(
+            CREATE TABLE IF NOT EXISTS readercards (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                firstName TEXT NOT NULL,
+                lastName TEXT NOT NULL,
+                email TEXT NOT NULL,
+                age INTEGER NOT NULL
+            )
         )"
     };
     QSqlQuery schemaQuery;

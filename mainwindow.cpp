@@ -14,7 +14,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow), db(QSqlDatabase::addDatabase("QSQLITE")), userRepository(db), appState(State())
+    , ui(new Ui::MainWindow), db(QSqlDatabase::addDatabase("QSQLITE")), userRepository(db), appState(State()), bookRepository(db), readerCardRepository(db)
 {
     ui->setupUi(this);
     appController = new Controller(ui->stackedWidget);
