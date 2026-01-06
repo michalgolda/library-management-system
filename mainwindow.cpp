@@ -10,6 +10,7 @@
 #include "userrepository.h"
 #include "schema.h"
 #include "controller.h"
+#include "booksindexscreen.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,9 +27,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     menuScreen = new MenuScreen(this, appController);
     loginScreen = new LoginScreen(this, &appState, userRepository, appController);
+    booksIndexScreen = new BooksIndexScreen(this);
+    readerCardsScreen = new ReaderCardsScreen(this);
 
     appController->registerScreen(ScreenId::Menu, menuScreen);
     appController->registerScreen(ScreenId::Login, loginScreen);
+    appController->registerScreen(ScreenId::BooksIndex, booksIndexScreen);
+    appController->registerScreen(ScreenId::ReaderCards, readerCardsScreen);
+
 
     appController->goTo(ScreenId::Login);
 

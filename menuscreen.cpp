@@ -9,6 +9,8 @@ MenuScreen::MenuScreen(QWidget *parent, Controller *appController)
     ui->setupUi(this);
 
     connect(ui->quitButton, &QPushButton::clicked, this, &MenuScreen::handleQuitButton);
+    connect(ui->booksIndexPageButton, &QPushButton::clicked, this, &MenuScreen::handleBooksIndexPageButton);
+    connect(ui->readerCardsPageButton, &QPushButton::clicked, this, &MenuScreen::handleReaderCardsPageButton);
 }
 
 MenuScreen::~MenuScreen()
@@ -18,25 +20,15 @@ MenuScreen::~MenuScreen()
 
 void MenuScreen::handleQuitButton()
 {
-    const auto result = QMessageBox::question(
-        this,
-        "Zamykanie aplikacji",
-        "Czy na pewno chcesz zamknąć aplikację?",
-        QMessageBox::Yes | QMessageBox::No,
-        QMessageBox::No
-        );
-
-    if (result == QMessageBox::Yes) {
-        QApplication::quit();
-    }
+    QApplication::quit();
 }
 
 void MenuScreen::handleBooksIndexPageButton()
 {
-
+    appController->goTo(ScreenId::BooksIndex);
 }
 
 void MenuScreen::handleReaderCardsPageButton()
 {
-
+    appController->goTo(ScreenId::ReaderCards);
 }

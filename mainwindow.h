@@ -1,13 +1,15 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QSqlDatabase>
 #include <QMainWindow>
 #include "loginscreen.h"
 #include "state.h"
 #include "menuscreen.h"
-#include <QSqlDatabase>
 #include "userrepository.h"
 #include "controller.h"
+#include "booksindexscreen.h"
+#include "readercardsscreen.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -31,6 +33,8 @@ private:
     UserRepository userRepository;
     State appState;
     Controller *appController = nullptr;
+    ReaderCardsScreen *readerCardsScreen = nullptr;
+    BooksIndexScreen *booksIndexScreen = nullptr;
     LoginScreen *loginScreen = nullptr;
     MenuScreen *menuScreen = nullptr;
 };
