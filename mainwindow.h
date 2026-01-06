@@ -7,6 +7,7 @@
 #include "menuscreen.h"
 #include <QSqlDatabase>
 #include "userrepository.h"
+#include "controller.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,6 +28,7 @@ private:
     QSqlDatabase db;
     UserRepository userRepository;
     State appState;
+    Controller *appController = nullptr;
     LoginScreen *loginScreen = nullptr;
     MenuScreen *menuScreen = nullptr;
 };

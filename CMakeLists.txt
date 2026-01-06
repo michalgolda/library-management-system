@@ -18,6 +18,11 @@ qt_add_executable(library-management-system
     userrepository.cpp
     usermapper.h
     state.h
+    schema.h
+    controller.h
+    controller.cpp
+
+    screenid.h
 
 
 

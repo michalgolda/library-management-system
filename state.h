@@ -4,12 +4,23 @@
 
 struct State
 {
-    std::optional<UserEntity> currentUser = std::nullopt;
-
     bool isAuthenticated()
     {
         return currentUser.has_value();
     }
+
+    void setCurrentUser(std::optional<UserEntity> user)
+    {
+        currentUser = user;
+    }
+
+    std::optional<UserEntity> getCurrentUser()
+    {
+        return currentUser;
+    }
+
+    private:
+        std::optional<UserEntity> currentUser = std::nullopt;
 };
 
 #endif // STATE_H
