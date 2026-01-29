@@ -35,8 +35,8 @@ inline void initSchema(QSqlDatabase db)
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 book_id INTEGER NOT NULL,
                 readercard_id INTEGER NOT NULL
-    )
-)"
+            )
+        )"
     };
     QSqlQuery schemaQuery(db);
     for (const QString& sql : schema) {
