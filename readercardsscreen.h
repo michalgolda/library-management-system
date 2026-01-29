@@ -15,7 +15,7 @@ class ReaderCardsScreen : public QWidget
     Q_OBJECT
 
 public:
-    explicit ReaderCardsScreen(QWidget *parent, Controller *appController, QSqlDatabase db);
+    explicit ReaderCardsScreen(QWidget *parent, QSqlDatabase db, Controller *appController);
     ~ReaderCardsScreen();
 
 private:

@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     menuScreen = new MenuScreen(this, appController);
     loginScreen = new LoginScreen(this, &appState, userRepository, appController);
     booksIndexScreen = new BooksIndexScreen(this, db, appController);
-    readerCardsScreen = new ReaderCardsScreen(this, appController, db);
+    readerCardsScreen = new ReaderCardsScreen(this, db, appController);
     borrowingsScreen = new BorrowingsScreen(this, db, appController);
 
     appController->registerScreen(ScreenId::Menu, menuScreen);

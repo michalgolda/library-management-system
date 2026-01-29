@@ -6,7 +6,7 @@
 #include "screenid.h"
 #include "ui_readercardsscreen.h"
 
-ReaderCardsScreen::ReaderCardsScreen(QWidget *parent, Controller *appController, QSqlDatabase db)
+ReaderCardsScreen::ReaderCardsScreen(QWidget *parent, QSqlDatabase db, Controller *appController)
     : QWidget(parent)
     , ui(new Ui::ReaderCardsScreen), appController(appController), db(db), readyForCreateRow(false)
 {
