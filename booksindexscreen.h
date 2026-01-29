@@ -22,14 +22,15 @@ private:
     Ui::BooksIndexScreen *ui;
     QSqlDatabase db;
     Controller *appController;
+
     QSqlTableModel *model;
     bool readyForCreateRow;
 
 private slots:
-    void handleBackButton();
-    void handleDeleteRowsButton();
-    void handleAddRowButton();
-    void handleRefreshButton();
+    void handleBackButtonClick();
+    void handleDeleteRowsButtonClick();
+    void handleAddRowButtonClick();
+    void handleRefreshButtonClick();
 };
 
 #endif // BOOKSINDEXSCREEN_H

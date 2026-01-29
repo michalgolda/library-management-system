@@ -15,22 +15,21 @@ BooksIndexScreen::BooksIndexScreen(QWidget *parent, QSqlDatabase db, Controller 
     ui->setupUi(this);
 
     ui->backButton->setToolTip("Powrót do głównego ekranu");
-    connect(ui->backButton, &QPushButton::clicked, this, &BooksIndexScreen::handleBackButton);
+    connect(ui->backButton, &QPushButton::clicked, this, &BooksIndexScreen::handleBackButtonClick);
 
     ui->deleteRowsButton->setToolTip("Usuwa zaznaczone wiersze");
-    connect(ui->deleteRowsButton, &QPushButton::clicked, this, &BooksIndexScreen::handleDeleteRowsButton);
+    connect(ui->deleteRowsButton, &QPushButton::clicked, this, &BooksIndexScreen::handleDeleteRowsButtonClick);
 
 
     ui->addRowButton->setToolTip("Dodaje pusty wiersz a ponowne kliknięcie dodaje nowy rekord");
-    connect(ui->addRowButton, &QPushButton::clicked, this, &BooksIndexScreen::handleAddRowButton);
+    connect(ui->addRowButton, &QPushButton::clicked, this, &BooksIndexScreen::handleAddRowButtonClick);
 
     ui->refreshButton->setToolTip("Odświeża dane w tabeli");
-    connect(ui->refreshButton, &QPushButton::clicked, this, &BooksIndexScreen::handleRefreshButton);
+    connect(ui->refreshButton, &QPushButton::clicked, this, &BooksIndexScreen::handleRefreshButtonClick);
 
     model = new QSqlTableModel(this, db);
     model->setTable("books");
     model->select();
-
 
     model->setHeaderData(0, Qt::Horizontal, "ID");
     model->setHeaderData(1, Qt::Horizontal, "Tytuł");
@@ -48,12 +47,12 @@ BooksIndexScreen::~BooksIndexScreen()
     delete ui;
 }
 
-void BooksIndexScreen::handleBackButton()
+void BooksIndexScreen::handleBackButtonClick()
 {
     appController->goTo(ScreenId::Menu);
 }
 
-void BooksIndexScreen::handleDeleteRowsButton()
+void BooksIndexScreen::handleDeleteRowsButtonClick()
 {
     QModelIndexList selectedIndexes = ui->tableView->selectionModel()->selectedRows();
     int selectedIndexesLength = selectedIndexes.length();
@@ -84,7 +83,7 @@ void BooksIndexScreen::handleDeleteRowsButton()
 
 }
 
-void BooksIndexScreen::handleAddRowButton()
+void BooksIndexScreen::handleAddRowButtonClick()
 {
     if (!readyForCreateRow)
     {
@@ -116,7 +115,7 @@ void BooksIndexScreen::handleAddRowButton()
     }
 }
 
-void BooksIndexScreen::handleRefreshButton()
+void BooksIndexScreen::handleRefreshButtonClick()
 {
     model->select();
 }
