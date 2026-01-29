@@ -15,13 +15,12 @@ class BooksIndexScreen : public QWidget
     Q_OBJECT
 
 public:
-    explicit BooksIndexScreen(QWidget *parent, BookRepository bookRepository, QSqlDatabase db, Controller *appController);
+    explicit BooksIndexScreen(QWidget *parent, QSqlDatabase db, Controller *appController);
     ~BooksIndexScreen();
 
 private:
     Ui::BooksIndexScreen *ui;
     QSqlDatabase db;
-    BookRepository bookRepository;
     Controller *appController;
     QSqlTableModel *model;
     bool readyForCreateRow;

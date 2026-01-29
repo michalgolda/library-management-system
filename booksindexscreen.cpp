@@ -8,9 +8,9 @@
 #include "controller.h"
 #include "bookrepository.h"
 
-BooksIndexScreen::BooksIndexScreen(QWidget *parent, BookRepository bookRepository, QSqlDatabase db, Controller *appController)
+BooksIndexScreen::BooksIndexScreen(QWidget *parent, QSqlDatabase db, Controller *appController)
     : QWidget(parent)
-    , ui(new Ui::BooksIndexScreen), bookRepository(bookRepository), db(db), appController(appController), readyForCreateRow(false)
+    , ui(new Ui::BooksIndexScreen), db(db), appController(appController), readyForCreateRow(false)
 {
     ui->setupUi(this);
 

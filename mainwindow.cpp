@@ -15,7 +15,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow), db(QSqlDatabase::addDatabase("QSQLITE")), userRepository(db), appState(State()), bookRepository(db), readerCardRepository(db)
+    , ui(new Ui::MainWindow), db(QSqlDatabase::addDatabase("QSQLITE")), userRepository(db), appState(State()), readerCardRepository(db)
 {
     ui->setupUi(this);
     appController = new Controller(ui->stackedWidget);
@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     menuScreen = new MenuScreen(this, appController);
     loginScreen = new LoginScreen(this, &appState, userRepository, appController);
-    booksIndexScreen = new BooksIndexScreen(this, bookRepository, db, appController);
+    booksIndexScreen = new BooksIndexScreen(this, db, appController);
     readerCardsScreen = new ReaderCardsScreen(this, appController, db);
     borrowingsScreen = new BorrowingsScreen(this, db, appController);
 

@@ -33,7 +33,6 @@ private:
     Ui::MainWindow *ui;
     QSqlDatabase db;
     UserRepository userRepository;
-    BookRepository bookRepository;
     ReaderCardRepository readerCardRepository;
     State appState;
     Controller *appController = nullptr;
