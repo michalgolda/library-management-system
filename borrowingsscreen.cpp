@@ -9,7 +9,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 
-BorrowingsScreen::BorrowingsScreen(QSqlDatabase &db, Controller *appController, QWidget *parent)
+BorrowingsScreen::BorrowingsScreen(QWidget *parent, QSqlDatabase db, Controller *appController)
     : QWidget(parent), ui(new Ui::BorrowingsScreen), db(db), appController(appController)
 {
     ui->setupUi(this);

@@ -16,13 +16,13 @@ class BorrowingsScreen : public QWidget
     Q_OBJECT
 
 public:
-    explicit BorrowingsScreen(QSqlDatabase &db, Controller *appController, QWidget *parent = nullptr);
+    explicit BorrowingsScreen(QWidget *parent, QSqlDatabase db, Controller *appController);
     ~BorrowingsScreen();
 
 private:
     Ui::BorrowingsScreen *ui;
     Controller *appController;
-    QSqlDatabase &db;
+    QSqlDatabase db;
     QSqlTableModel *model;
     QSqlQueryModel *borrowingsModel;
     bool showingBorrowings;
