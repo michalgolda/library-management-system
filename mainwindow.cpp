@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
     seedDatabase(db);
 
     menuScreen = new MenuScreen(this, appController);
-    loginScreen = new LoginScreen(this, &appState, userRepository, appController);
+    loginScreen = new LoginScreen(this, &appState, appController, userRepository);
     booksIndexScreen = new BooksIndexScreen(this, db, appController);
     readerCardsScreen = new ReaderCardsScreen(this, db, appController);
     borrowingsScreen = new BorrowingsScreen(this, db, appController);

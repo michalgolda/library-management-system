@@ -15,7 +15,7 @@ class LoginScreen : public QWidget
     Q_OBJECT
 
 public:
-    explicit LoginScreen(QWidget *parent, State *appState, UserRepository userRepository, Controller *appController);
+    explicit LoginScreen(QWidget *parent, State *appState, Controller *appController, UserRepository userRepository);
     ~LoginScreen();
 
 private:

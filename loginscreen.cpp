@@ -3,9 +3,9 @@
 #include "ui_loginscreen.h"
 
 
-LoginScreen::LoginScreen(QWidget *parent, State *appState, UserRepository userRepository, Controller *appController)
+LoginScreen::LoginScreen(QWidget *parent, State *appState, Controller *appController, UserRepository userRepository)
     : QWidget(parent)
-    , ui(new Ui::LoginScreen), appState(appState), userRepository(userRepository), appController(appController)
+    , ui(new Ui::LoginScreen), appState(appState), appController(appController), userRepository(userRepository)
 {
     ui->setupUi(this);
 
