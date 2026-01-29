@@ -23,11 +23,15 @@ BorrowingsScreen::BorrowingsScreen(QWidget *parent, QSqlDatabase db, Controller 
     model->setTable("readercards");
     model->select();
 
+    model->setHeaderData(2, Qt::Horizontal, "Nazwisko");
+    model->setHeaderData(1, Qt::Horizontal, "Imię");
+    model->setHeaderData(3, Qt::Horizontal, "E-mail");
+    model->setHeaderData(4, Qt::Horizontal, "Wiek");
+
     ui->tableView->setModel(model);
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
     ui->tableView->hideColumn(0);
 
     connect(ui->backButton, &QPushButton::clicked,
@@ -54,6 +58,10 @@ void BorrowingsScreen::handleBackButtonClick()
         model->setFilter("");
         model->setTable("readercards");
         model->select();
+        model->setHeaderData(2, Qt::Horizontal, "Nazwisko");
+        model->setHeaderData(1, Qt::Horizontal, "Imię");
+        model->setHeaderData(3, Qt::Horizontal, "E-mail");
+        model->setHeaderData(4, Qt::Horizontal, "Wiek");
 
         ui->tableView->setModel(model);
         ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -160,6 +168,10 @@ void BorrowingsScreen::handleNextButtonClick()
     model->setFilter("id NOT IN (SELECT book_id FROM borrowings)");
     model->select();
 
+    model->setHeaderData(1, Qt::Horizontal, "Tytuł");
+    model->setHeaderData(2, Qt::Horizontal, "Opis");
+    model->setHeaderData(3, Qt::Horizontal, "Ilość stron");
+
     ui->tableView->clearSelection();
     ui->tableView->setSelectionMode(QAbstractItemView::ExtendedSelection);
     ui->tableView->hideColumn(0);
@@ -205,6 +217,11 @@ void BorrowingsScreen::handleConfirmButtonClick()
 
     model->setTable("readercards");
     model->select();
+
+    model->setHeaderData(2, Qt::Horizontal, "Nazwisko");
+    model->setHeaderData(1, Qt::Horizontal, "Imię");
+    model->setHeaderData(3, Qt::Horizontal, "E-mail");
+    model->setHeaderData(4, Qt::Horizontal, "Wiek");
 
     ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->tableView->hideColumn(0);

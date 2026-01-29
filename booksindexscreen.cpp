@@ -31,7 +31,6 @@ BooksIndexScreen::BooksIndexScreen(QWidget *parent, QSqlDatabase db, Controller 
     model->setTable("books");
     model->select();
 
-    model->setHeaderData(0, Qt::Horizontal, "ID");
     model->setHeaderData(1, Qt::Horizontal, "Tytuł");
     model->setHeaderData(2, Qt::Horizontal, "Opis");
     model->setHeaderData(3, Qt::Horizontal, "Ilość stron");
