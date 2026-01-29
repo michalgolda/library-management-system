@@ -4,5 +4,6 @@ enum class ScreenId {
     Login,
     Menu,
     BooksIndex,
-    ReaderCards
+    ReaderCards,
+    Borrowings
 };

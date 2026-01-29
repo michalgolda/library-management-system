@@ -31,11 +31,13 @@ MainWindow::MainWindow(QWidget *parent)
     loginScreen = new LoginScreen(this, &appState, userRepository, appController);
     booksIndexScreen = new BooksIndexScreen(this, bookRepository, db, appController);
     readerCardsScreen = new ReaderCardsScreen(this, appController, db);
+    borrowingsScreen = new BorrowingsScreen(db, appController, this);
 
     appController->registerScreen(ScreenId::Menu, menuScreen);
     appController->registerScreen(ScreenId::Login, loginScreen);
     appController->registerScreen(ScreenId::BooksIndex, booksIndexScreen);
     appController->registerScreen(ScreenId::ReaderCards, readerCardsScreen);
+    appController->registerScreen(ScreenId::Borrowings, borrowingsScreen);
 
 
     appController->goTo(ScreenId::ReaderCards);

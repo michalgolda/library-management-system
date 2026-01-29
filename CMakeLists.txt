@@ -35,6 +35,9 @@ qt_add_executable(library-management-system
     readercardrepository.h
     readercardrepository.cpp
     seed.h
+    borrowingsscreen.cpp
+    borrowingsscreen.h
+    borrowingsscreen.ui
 
 
 

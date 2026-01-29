@@ -11,6 +11,7 @@ MenuScreen::MenuScreen(QWidget *parent, Controller *appController)
     connect(ui->quitButton, &QPushButton::clicked, this, &MenuScreen::handleQuitButton);
     connect(ui->booksIndexPageButton, &QPushButton::clicked, this, &MenuScreen::handleBooksIndexPageButton);
     connect(ui->readerCardsPageButton, &QPushButton::clicked, this, &MenuScreen::handleReaderCardsPageButton);
+    connect(ui->borrowingsPageButton, &QPushButton::clicked, this, &MenuScreen::handleBorrowingsPageButton);
 }
 
 MenuScreen::~MenuScreen()
@@ -31,4 +32,9 @@ void MenuScreen::handleBooksIndexPageButton()
 void MenuScreen::handleReaderCardsPageButton()
 {
     appController->goTo(ScreenId::ReaderCards);
+}
+
+void MenuScreen::handleBorrowingsPageButton()
+{
+    appController->goTo(ScreenId::Borrowings);
 }

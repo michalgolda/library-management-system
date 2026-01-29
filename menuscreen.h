@@ -20,6 +20,7 @@ public slots:
     void handleQuitButton();
     void handleBooksIndexPageButton();
     void handleReaderCardsPageButton();
+    void handleBorrowingsPageButton();
 
 private:
     Ui::MenuScreen *ui;

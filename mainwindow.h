@@ -11,6 +11,7 @@
 #include "readercardsscreen.h"
 #include "readercardrepository.h"
 #include "bookrepository.h"
+#include "borrowingsscreen.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -40,5 +41,6 @@ private:
     BooksIndexScreen *booksIndexScreen = nullptr;
     LoginScreen *loginScreen = nullptr;
     MenuScreen *menuScreen = nullptr;
+    BorrowingsScreen *borrowingsScreen = nullptr;
 };
 #endif // MAINWINDOW_H

@@ -26,12 +26,19 @@ inline void initSchema(QSqlDatabase db)
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 firstName TEXT NOT NULL,
                 lastName TEXT NOT NULL,
-                email TEXT NOT NULL,
+                email TEXT NOT NULL UNIQUE,
                 age INTEGER NOT NULL
             )
-        )"
+        )",
+        R"(
+            CREATE TABLE IF NOT EXISTS borrowings (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                book_id INTEGER NOT NULL,
+                readercard_id INTEGER NOT NULL
+    )
+)"
     };
-    QSqlQuery schemaQuery;
+    QSqlQuery schemaQuery(db);
     for (const QString& sql : schema) {
         if (!schemaQuery.exec(sql)) {
             qDebug() << schemaQuery.lastError().text();
