@@ -40,7 +40,7 @@ MainWindow::MainWindow(QWidget *parent)
     appController->registerScreen(ScreenId::Borrowings, borrowingsScreen);
 
 
-    appController->goTo(ScreenId::Menu);
+    appController->goTo(ScreenId::Login);
 
     std::optional<UserEntity> user = userRepository.getByUsername("admin");
     if (!user.has_value())
